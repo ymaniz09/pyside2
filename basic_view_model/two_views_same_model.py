@@ -6,6 +6,7 @@ from PySide2.QtWidgets import QApplication, QListView, QComboBox
 if __name__ == '__main__':
     """
     Using a model for two different views
+    Now the changes in QListView will be shown in QComboBox
     """
 
     app = QApplication(sys.argv)
