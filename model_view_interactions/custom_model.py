@@ -86,15 +86,19 @@ if __name__ == '__main__':
 
     # Let's create some views:
     list_view = QListView()
+    list_view.setWindowTitle("QListView")
     list_view.show()
 
     tree_view = QTreeView()
+    tree_view.setWindowTitle("QTreeView")
     tree_view.show()
 
     comboBox = QComboBox()
+    comboBox.setWindowTitle("QComboBox")
     comboBox.show()
 
     table_view = QTableView()
+    table_view.setWindowTitle("QTableView")
     table_view.show()
 
     # Our colors
