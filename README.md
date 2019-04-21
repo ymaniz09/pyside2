@@ -1,7 +1,7 @@
 # pyside2
 Testing Pyside2
 
-Implementing [Yasin Uludag](https://www.youtube.com/user/Endureil/videos) tutorials for Pyqt on PySide2
+Implementing [Yasin Uludag](https://www.youtube.com/user/Endureil/videos) tutorials for PyQt4 on PySide2
 
 
 Taking a look at two_views.py, now we have two views showing the same data.
