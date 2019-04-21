@@ -1,10 +1,12 @@
 import sys
 
-
 from PySide2 import QtCore
 from PySide2.QtWidgets import QApplication, QListWidget, QComboBox
 
 if __name__ == '__main__':
+    """
+    Two views using each one a instance of our data
+    """
 
     app = QApplication(sys.argv)
 

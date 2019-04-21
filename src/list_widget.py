@@ -3,6 +3,9 @@ import sys
 from PySide2.QtWidgets import QApplication, QListWidget
 
 if __name__ == '__main__':
+    """
+    Simple QListWidget showing some items
+    """
 
     app = QApplication(sys.argv)
 
