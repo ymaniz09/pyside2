@@ -5,7 +5,7 @@ from PySide2.QtWidgets import QApplication, QListView, QComboBox
 
 if __name__ == '__main__':
     """
-    Using a model to two different views
+    Using a model for two different views
     """
 
     app = QApplication(sys.argv)

@@ -6,6 +6,7 @@ from PySide2.QtWidgets import QApplication, QListWidget, QComboBox
 if __name__ == '__main__':
     """
     Two views using each one a instance of our data
+    When the data is change in QListWidget(), the data in QComboBox will not be changed
     """
 
     app = QApplication(sys.argv)
