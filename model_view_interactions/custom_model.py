@@ -1,6 +1,6 @@
 import sys
 
-from PySide2.QtCore import QAbstractListModel, Qt
+from PySide2.QtCore import QAbstractListModel, Qt, QModelIndex
 from PySide2.QtGui import QColor, QPixmap, QIcon
 from PySide2.QtWidgets import QApplication, QListView, QComboBox, QTreeView, QTableView
 
@@ -75,6 +75,23 @@ class PalletListModel(QAbstractListModel):
 
         return False
 
+    def insertRows(self, position, rows, parent=QModelIndex()):
+        # We do not have a hierarchical view, thus the first parameter will be QModelIndex() (defaulted to the root)
+        # zero based index for last
+        self.beginInsertRows(parent, position, position + rows - 1)
+        for i in range(rows):
+            self.__colors.insert(position, QColor("#000000"))
+        self.endInsertRows()
+
+        return True
+
+    def removeRows(self, position, rows, parent=QModelIndex()):
+        self.beginRemoveRows(parent, position, position + rows - 1)
+        for i in range(rows):
+            value = self.__colors[position]
+            self.__colors.remove(value)
+        self.endRemoveRows()
+
 
 if __name__ == '__main__':
     """
@@ -112,5 +129,9 @@ if __name__ == '__main__':
     tree_view.setModel(model)
     comboBox.setModel(model)
     table_view.setModel(model)
+
+    # If this works as expected, we'll have any change on RGB colors on model
+    model.insertRows(2, 5)
+    model.removeRows(2, 5)
 
     sys.exit(app.exec_())
